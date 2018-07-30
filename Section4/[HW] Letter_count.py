@@ -1,13 +1,17 @@
 chars =  input("Enter the sentence you want to count here: ").lower()
-order_list = ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"
-              , "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z")
-true_counts ={}
-letter_counts = {}
+order_list = []
+for i in range(ord("a"), ord("z") + 1):
+    order_list.append(chr(i))
+
+alpha_counts ={}
+first_counts = {}
 for letter in chars:
-    letter_counts[letter] = letter_counts.get(letter, 0) + 1
-for letter in order_list:
-    for another_letter in letter_counts.keys():
-        if letter == another_letter:
-            true_counts[letter] = letter_counts[letter]
-for letter, number in true_counts.items():
+    first_counts[letter] = first_counts.get(letter, 0) + 1
+
+for i in order_list:
+     for key in first_counts.keys():
+         if i == key:
+            alpha_counts[i] = first_counts[i]
+for letter, number in alpha_counts.items():
     print("{0} {1}".format(letter, number))
+
