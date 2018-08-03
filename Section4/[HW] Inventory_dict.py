@@ -10,9 +10,11 @@ stocks = {
     "orange": 32,
     "pear": 15
 }
-for items ,price, stock in zip(prices.keys(), prices.values(), stocks.values()):
-    print("{0} {1}".format("•", items), "{0} {1} : {2}".format("•", "price", price),
-          "{0} {1} : {2}".format("•", "stock", stock), sep="\n")
+for items, price, stock in zip(prices.keys(), prices.values(), stocks.values()):
+    # print("{0} {1}".format("•", items), "{0} {1} : {2}".format("•", "price", price),
+    #       "{0} {1} : {2}".format("•", "stock", stock), sep="\n")
+
+    print("• {0} \n • price: {1} \n • stock: {2}".format(items, price, stock)) #spaces next to \n make the difference
     print()
 
 total = 0
